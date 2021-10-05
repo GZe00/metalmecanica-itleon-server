@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return participation_update_activities_pe_12.init(sequelize, DataTypes);
+  return ParticipationUpdateActivitiesPe12.init(sequelize, DataTypes);
 }
 
-class participation_update_activities_pe_12 extends Sequelize.Model {
+class ParticipationUpdateActivitiesPe12 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -39,6 +39,6 @@ class participation_update_activities_pe_12 extends Sequelize.Model {
       },
     ]
   });
-  return participation_update_activities_pe_12;
+  return ParticipationUpdateActivitiesPe12;
   }
 }

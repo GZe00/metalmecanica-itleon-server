@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return acknowledgments_received_11.init(sequelize, DataTypes);
+  return AcknowledgmentsReceived11.init(sequelize, DataTypes);
 }
 
-class acknowledgments_received_11 extends Sequelize.Model {
+class AcknowledgmentsReceived11 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -39,6 +39,6 @@ class acknowledgments_received_11 extends Sequelize.Model {
       },
     ]
   });
-  return acknowledgments_received_11;
+  return AcknowledgmentsReceived11;
   }
 }

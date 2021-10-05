@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return teach.init(sequelize, DataTypes);
+  return OtrasAreas6.init(sequelize, DataTypes);
 }
 
-class teach extends Sequelize.Model {
+class OtrasAreas6 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -12,27 +12,34 @@ class teach extends Sequelize.Model {
       allowNull: false,
       primaryKey: true
     },
-    rol_id: {
+    document_2_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'roles',
+        model: 'document_2',
         key: 'id'
       }
     },
-    is_teach: {
-      type: DataTypes.BOOLEAN,
-      allowNull: true,
-      defaultValue: false
+    hour_theory: {
+      type: DataTypes.SMALLINT,
+      allowNull: false
+    },
+    hour_practice: {
+      type: DataTypes.SMALLINT,
+      allowNull: false
+    },
+    hour_total: {
+      type: DataTypes.SMALLINT,
+      allowNull: false
     }
   }, {
     sequelize,
-    tableName: 'teach',
+    tableName: 'otras_areas_6',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "teach_pkey",
+        name: "otras_areas_6_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -40,6 +47,6 @@ class teach extends Sequelize.Model {
       },
     ]
   });
-  return teach;
+  return OtrasAreas6;
   }
 }

@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return ProfessionalExperience7.init(sequelize, DataTypes);
+  return IngenieriaAplicada3.init(sequelize, DataTypes);
 }
 
-class ProfessionalExperience7 extends Sequelize.Model {
+class IngenieriaAplicada3 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -12,38 +12,34 @@ class ProfessionalExperience7 extends Sequelize.Model {
       allowNull: false,
       primaryKey: true
     },
-    document_0_id: {
+    document_2_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'document_0',
+        model: 'document_2',
         key: 'id'
       }
     },
-    activity: {
-      type: DataTypes.STRING,
-      allowNull: true
+    hour_theory: {
+      type: DataTypes.SMALLINT,
+      allowNull: false
     },
-    organization: {
-      type: DataTypes.STRING,
-      allowNull: true
+    hour_practice: {
+      type: DataTypes.SMALLINT,
+      allowNull: false
     },
-    from: {
-      type: DataTypes.DATEONLY,
-      allowNull: true
-    },
-    to: {
-      type: DataTypes.DATEONLY,
-      allowNull: true
+    hour_total: {
+      type: DataTypes.SMALLINT,
+      allowNull: false
     }
   }, {
     sequelize,
-    tableName: 'professional_experience_7',
+    tableName: 'ingenieria_aplicada_3',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "professional_experience_7_pkey",
+        name: "ingenieria_aplicada_3_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -51,6 +47,6 @@ class ProfessionalExperience7 extends Sequelize.Model {
       },
     ]
   });
-  return ProfessionalExperience7;
+  return IngenieriaAplicada3;
   }
 }

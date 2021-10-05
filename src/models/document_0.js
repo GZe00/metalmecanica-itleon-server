@@ -1,24 +1,24 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return document_0.init(sequelize, DataTypes);
+  return Document0.init(sequelize, DataTypes);
 }
 
-class document_0 extends Sequelize.Model {
+class Document0 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
+      references: {
+        model: 'roles',
+        key: 'id'
+      }
     },
     teach_id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
-      references: {
-        model: 'teach',
-        key: 'id'
-      }
+      allowNull: true
     },
     names: {
       type: DataTypes.STRING,
@@ -55,6 +55,6 @@ class document_0 extends Sequelize.Model {
       },
     ]
   });
-  return document_0;
+  return Document0;
   }
 }

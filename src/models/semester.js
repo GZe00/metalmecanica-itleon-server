@@ -1,37 +1,37 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return Roles.init(sequelize, DataTypes);
+  return Semester.init(sequelize, DataTypes);
 }
 
-class Roles extends Sequelize.Model {
+class Semester extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,
+      primaryKey: true,
       references: {
-        model: 'user',
+        model: 'roles',
         key: 'id'
       }
     },
-    type: {
-      type: DataTypes.ENUM("jefe_de_departamento","jefatura_docencia","jefatura_vinculacion","jefatura_investigacion","jefatura_laboratorio","docente"),
+    student_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    grade: {
+      type: DataTypes.STRING,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'roles',
+    tableName: 'semester',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "roles_pkey",
+        name: "semester_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -39,6 +39,6 @@ class Roles extends Sequelize.Model {
       },
     ]
   });
-  return Roles;
+  return Semester;
   }
 }

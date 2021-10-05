@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return professional_achievements_9.init(sequelize, DataTypes);
+  return ProfessionalAchievements9.init(sequelize, DataTypes);
 }
 
-class professional_achievements_9 extends Sequelize.Model {
+class ProfessionalAchievements9 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -39,6 +39,6 @@ class professional_achievements_9 extends Sequelize.Model {
       },
     ]
   });
-  return professional_achievements_9;
+  return ProfessionalAchievements9;
   }
 }

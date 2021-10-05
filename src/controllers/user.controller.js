@@ -1,11 +1,14 @@
 
-// import UserService from "../services/user.services";
-const UserService = require("../services/user.services");
+import UserService from "../services/user.services";
+// const UserService = require("../services/user.services");
 
 const getAllUser = async(req, res, next) => {
     try {
         const user = await UserService.getAll();
-        res.json(user)
+        res.json({
+            message: "Tarea exitosa",
+            data: user
+        })
     } catch (error) {
         next(error);
     }

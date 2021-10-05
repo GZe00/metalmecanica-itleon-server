@@ -1,39 +1,40 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return ValidateAccount.init(sequelize, DataTypes);
+  return Document1.init(sequelize, DataTypes);
 }
 
-class ValidateAccount extends Sequelize.Model {
+class Document1 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
-    hash: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      primaryKey: true
-    },
-    user_id: {
+    id: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
+      primaryKey: true,
       references: {
-        model: 'user',
+        model: 'roles',
         key: 'id'
       }
+    },
+    teach_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'validate_account',
+    tableName: 'document_1',
     schema: 'public',
     timestamps: true,
     indexes: [
       {
-        name: "validate_account_pkey",
+        name: "document_1_pkey",
         unique: true,
         fields: [
-          { name: "hash" },
+          { name: "id" },
         ]
       },
     ]
   });
-  return ValidateAccount;
+  return Document1;
   }
 }

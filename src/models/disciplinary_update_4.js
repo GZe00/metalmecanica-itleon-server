@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return disciplinary_update_4.init(sequelize, DataTypes);
+  return DisciplinaryUpdate4.init(sequelize, DataTypes);
 }
 
-class disciplinary_update_4 extends Sequelize.Model {
+class DisciplinaryUpdate4 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -55,6 +55,6 @@ class disciplinary_update_4 extends Sequelize.Model {
       },
     ]
   });
-  return disciplinary_update_4;
+  return DisciplinaryUpdate4;
   }
 }

@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return academic_productsPE_6.init(sequelize, DataTypes);
+  return AcademicProductsPe6.init(sequelize, DataTypes);
 }
 
-class academic_productsPE_6 extends Sequelize.Model {
+class AcademicProductsPe6 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -21,9 +21,8 @@ class academic_productsPE_6 extends Sequelize.Model {
       }
     },
     num: {
-      autoIncrement: true,
       type: DataTypes.INTEGER,
-      allowNull: false
+      allowNull: true
     },
     description: {
       type: DataTypes.STRING,
@@ -44,6 +43,6 @@ class academic_productsPE_6 extends Sequelize.Model {
       },
     ]
   });
-  return academic_productsPE_6;
+  return AcademicProductsPe6;
   }
 }

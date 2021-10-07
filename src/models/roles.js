@@ -21,7 +21,7 @@ class Roles extends Sequelize.Model {
       }
     },
     type: {
-      type: DataTypes.ENUM("jefe_de_departamento","jefatura_docencia","jefatura_vinculacion","jefatura_investigacion","jefatura_laboratorio","docente"),
+      type: DataTypes.ENUM("jefe_de_departamento","jefatura_docencia","jefatura_vinculacion","jefatura_investigacion","jefatura_laboratorio","docente","estudiante"),
       allowNull: true
     }
   }, {

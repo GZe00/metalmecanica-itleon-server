@@ -22,15 +22,15 @@ class CienciasEconomicas5 extends Sequelize.Model {
     },
     hour_theory: {
       type: DataTypes.SMALLINT,
-      allowNull: false
+      allowNull: true
     },
     hour_practice: {
       type: DataTypes.SMALLINT,
-      allowNull: false
+      allowNull: true
     },
     hour_total: {
       type: DataTypes.SMALLINT,
-      allowNull: false
+      allowNull: true
     }
   }, {
     sequelize,

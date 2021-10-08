@@ -102,10 +102,27 @@ const deleteRol = async (req, res) => {
   }
 };
 
+const userRol = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const rolUser = await RolService.joinUser(id);
+    return res.json({
+      message: "Tarea exitosa",
+      data: rolUser
+    });
+  } catch (error) {
+    res.json({
+      message: "Algo salió mal",
+      error,
+    });
+  }
+};
+
 module.exports = {
   getAllRol,
   getRolById,
   createRol,
   updateRol,
   deleteRol,
+  userRol,
 };

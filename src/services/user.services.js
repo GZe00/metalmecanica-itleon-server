@@ -1,9 +1,9 @@
-const { User } = require("../models");
+const { users } = require("../models");
 
 class UserService {
   static async getAll() {
     try {
-      let result = await User.findAll();
+      let result = await users.findAll();
       return result;
     } catch (error) {
       throw error;
@@ -12,7 +12,7 @@ class UserService {
 
   static async getById(id) {
     try {
-      let result = await User.findByPk(id);
+      let result = await users.findByPk(id);
       return result;
     } catch (error) {
       throw error;
@@ -21,7 +21,7 @@ class UserService {
 
   static async create(newUser) {
     try {
-      let result = await User.create(newUser);
+      let result = await users.create(newUser);
       result = JSON.parse(JSON.stringify(result));
       delete result.password; //Eliminamos la contraseña para que no aparezca en la respuesta
       return result;
@@ -32,7 +32,7 @@ class UserService {
 
   static async update(updatedUser, id) {
     try {
-      let result = await User.update(updatedUser, { where: { id } });
+      let result = await users.update(updatedUser, { where: { id } });
       console.log(result);
       if (result[0] === 0) {
         return false;
@@ -45,7 +45,7 @@ class UserService {
 
   static async delete(id) {
     try {
-      let result = await User.destroy({ where: { id } });
+      let result = await users.destroy({ where: { id } });
       return result;
     } catch (error) {
       throw error;

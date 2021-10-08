@@ -1,9 +1,9 @@
-const { Roles } = require("../models");
+const { roles, users } = require("../models");
 
 class RolService {
   static async getAll() {
     try {
-      let result = await Roles.findAll();
+      let result = await roles.findAll();
       return result;
     } catch (error) {
       throw error;
@@ -12,7 +12,7 @@ class RolService {
 
   static async getById(id) {
     try {
-      let result = await Roles.findByPk(id);
+      let result = await roles.findByPk(id);
       return result;
     } catch (error) {
       throw error;
@@ -21,7 +21,7 @@ class RolService {
 
   static async create(newRoles) {
     try {
-      let result = await Roles.create(newRoles);
+      let result = await roles.create(newRoles);
       result = JSON.parse(JSON.stringify(result));
       delete result.password; //Eliminamos la contraseña para que no aparezca en la respuesta
       return result;
@@ -32,7 +32,7 @@ class RolService {
 
   static async update(updatedRol, user_id) {
     try {
-      let result = await Roles.update(updatedRol, { where: { user_id } });
+      let result = await roles.update(updatedRol, { where: { user_id } });
       console.log(result);
       if (result[0] === 0) {
         return false;
@@ -45,7 +45,24 @@ class RolService {
 
   static async delete(id) {
     try {
-      let result = await Roles.destroy({ where: { id } });
+      let result = await roles.destroy({ where: { id } });
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  static async joinUser(id) {
+    try {
+      let result = await roles.findAll({
+        where: { user_id: id },
+        // include: [
+        //   {
+        //     model: users,
+        //     as: 'user',
+        //   },
+        // ],
+      });
       return result;
     } catch (error) {
       throw error;

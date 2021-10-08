@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return CienciasBasicas0.init(sequelize, DataTypes);
+  return ciencias_basicas_1.init(sequelize, DataTypes);
 }
 
-class CienciasBasicas0 extends Sequelize.Model {
+class ciencias_basicas_1 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -20,22 +20,26 @@ class CienciasBasicas0 extends Sequelize.Model {
         key: 'id'
       }
     },
-    key: {
-      type: DataTypes.STRING,
+    hour_theory: {
+      type: DataTypes.SMALLINT,
       allowNull: true
     },
-    description: {
-      type: DataTypes.STRING,
+    hour_practice: {
+      type: DataTypes.SMALLINT,
+      allowNull: true
+    },
+    hour_total: {
+      type: DataTypes.SMALLINT,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'ciencias_basicas_0',
+    tableName: 'ciencias_basicas_1',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "ciencias_basicas_0_pkey",
+        name: "ciencias_basicas_1_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -43,6 +47,6 @@ class CienciasBasicas0 extends Sequelize.Model {
       },
     ]
   });
-  return CienciasBasicas0;
+  return ciencias_basicas_1;
   }
 }

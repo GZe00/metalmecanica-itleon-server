@@ -1,20 +1,16 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return TeachClass.init(sequelize, DataTypes);
+  return teach_class.init(sequelize, DataTypes);
 }
 
-class TeachClass extends Sequelize.Model {
+class teach_class extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
-      references: {
-        model: 'roles',
-        key: 'id'
-      }
+      primaryKey: true
     },
     id_teach: {
       type: DataTypes.INTEGER,
@@ -43,6 +39,6 @@ class TeachClass extends Sequelize.Model {
       },
     ]
   });
-  return TeachClass;
+  return teach_class;
   }
 }

@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return ProfessionalExperience7.init(sequelize, DataTypes);
+  return professional_achievements_9.init(sequelize, DataTypes);
 }
 
-class ProfessionalExperience7 extends Sequelize.Model {
+class professional_achievements_9 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -20,30 +20,18 @@ class ProfessionalExperience7 extends Sequelize.Model {
         key: 'id'
       }
     },
-    activity: {
+    description: {
       type: DataTypes.STRING,
-      allowNull: true
-    },
-    organization: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    from: {
-      type: DataTypes.DATEONLY,
-      allowNull: true
-    },
-    to: {
-      type: DataTypes.DATEONLY,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'professional_experience_7',
+    tableName: 'professional_achievements_9',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "professional_experience_7_pkey",
+        name: "professional_achievements_9_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -51,6 +39,6 @@ class ProfessionalExperience7 extends Sequelize.Model {
       },
     ]
   });
-  return ProfessionalExperience7;
+  return professional_achievements_9;
   }
 }

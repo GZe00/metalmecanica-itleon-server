@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return ParticipationUpdateActivitiesPe12.init(sequelize, DataTypes);
+  return academic_management_5.init(sequelize, DataTypes);
 }
 
-class ParticipationUpdateActivitiesPe12 extends Sequelize.Model {
+class academic_management_5 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -20,18 +20,30 @@ class ParticipationUpdateActivitiesPe12 extends Sequelize.Model {
         key: 'id'
       }
     },
-    review: {
-      type: DataTypes.STRING(255),
+    activity: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    institution: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    from: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    to: {
+      type: DataTypes.DATEONLY,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'participation_update_activities_pe_12',
+    tableName: 'academic_management_5',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "participation_update_activities_pe_12_pkey",
+        name: "academic_management_5_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -39,6 +51,6 @@ class ParticipationUpdateActivitiesPe12 extends Sequelize.Model {
       },
     ]
   });
-  return ParticipationUpdateActivitiesPe12;
+  return academic_management_5;
   }
 }

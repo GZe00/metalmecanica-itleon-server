@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return OtrasAreas6.init(sequelize, DataTypes);
+  return ciencias_sociales_4.init(sequelize, DataTypes);
 }
 
-class OtrasAreas6 extends Sequelize.Model {
+class ciencias_sociales_4 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -34,12 +34,12 @@ class OtrasAreas6 extends Sequelize.Model {
     }
   }, {
     sequelize,
-    tableName: 'otras_areas_6',
+    tableName: 'ciencias_sociales_4',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "otras_areas_6_pkey",
+        name: "ciencias_sociales_4_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -47,6 +47,6 @@ class OtrasAreas6 extends Sequelize.Model {
       },
     ]
   });
-  return OtrasAreas6;
+  return ciencias_sociales_4;
   }
 }

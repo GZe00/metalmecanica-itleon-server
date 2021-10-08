@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return ValidateAccount.init(sequelize, DataTypes);
+  return validate_account.init(sequelize, DataTypes);
 }
 
-class ValidateAccount extends Sequelize.Model {
+class validate_account extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     hash: {
@@ -15,7 +15,7 @@ class ValidateAccount extends Sequelize.Model {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'user',
+        model: 'users',
         key: 'id'
       }
     }
@@ -34,6 +34,6 @@ class ValidateAccount extends Sequelize.Model {
       },
     ]
   });
-  return ValidateAccount;
+  return validate_account;
   }
 }

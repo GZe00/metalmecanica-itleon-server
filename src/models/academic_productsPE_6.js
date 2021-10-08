@@ -1,33 +1,41 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return Document1.init(sequelize, DataTypes);
+  return academic_productsPE_6.init(sequelize, DataTypes);
 }
 
-class Document1 extends Sequelize.Model {
+class academic_productsPE_6 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
+      primaryKey: true
+    },
+    document_0_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
       references: {
-        model: 'roles',
+        model: 'document_0',
         key: 'id'
       }
     },
-    teach_id: {
+    num: {
       type: DataTypes.INTEGER,
+      allowNull: true
+    },
+    description: {
+      type: DataTypes.STRING,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'document_1',
+    tableName: 'academic_productsPE_6',
     schema: 'public',
-    timestamps: true,
+    timestamps: false,
     indexes: [
       {
-        name: "document_1_pkey",
+        name: "academic_productsPE_6_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -35,6 +43,6 @@ class Document1 extends Sequelize.Model {
       },
     ]
   });
-  return Document1;
+  return academic_productsPE_6;
   }
 }

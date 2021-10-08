@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return EducationalBackground2.init(sequelize, DataTypes);
+  return professional_involvement_10.init(sequelize, DataTypes);
 }
 
-class EducationalBackground2 extends Sequelize.Model {
+class professional_involvement_10 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -20,38 +20,26 @@ class EducationalBackground2 extends Sequelize.Model {
         key: 'id'
       }
     },
-    level: {
-      type: DataTypes.CHAR(1),
-      allowNull: true
-    },
-    name: {
+    organism: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    institution: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    country: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    year_given: {
+    period: {
       type: DataTypes.DATEONLY,
       allowNull: true
     },
-    professional_license: {
+    participation: {
       type: DataTypes.STRING,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'educational_background_2',
+    tableName: 'professional_involvement_10',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "educational_background_2_pkey",
+        name: "professional_involvement_10_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -59,6 +47,6 @@ class EducationalBackground2 extends Sequelize.Model {
       },
     ]
   });
-  return EducationalBackground2;
+  return professional_involvement_10;
   }
 }

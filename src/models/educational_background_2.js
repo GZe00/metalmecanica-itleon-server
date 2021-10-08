@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return DisciplinaryUpdate4.init(sequelize, DataTypes);
+  return educational_background_2.init(sequelize, DataTypes);
 }
 
-class DisciplinaryUpdate4 extends Sequelize.Model {
+class educational_background_2 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -20,7 +20,11 @@ class DisciplinaryUpdate4 extends Sequelize.Model {
         key: 'id'
       }
     },
-    type_disciplinary: {
+    level: {
+      type: DataTypes.CHAR(1),
+      allowNull: true
+    },
+    name: {
       type: DataTypes.STRING,
       allowNull: true
     },
@@ -36,18 +40,18 @@ class DisciplinaryUpdate4 extends Sequelize.Model {
       type: DataTypes.DATEONLY,
       allowNull: true
     },
-    hours: {
+    professional_license: {
       type: DataTypes.STRING,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'disciplinary_update_4',
+    tableName: 'educational_background_2',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "disciplinary_update_4_pkey",
+        name: "educational_background_2_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -55,6 +59,6 @@ class DisciplinaryUpdate4 extends Sequelize.Model {
       },
     ]
   });
-  return DisciplinaryUpdate4;
+  return educational_background_2;
   }
 }

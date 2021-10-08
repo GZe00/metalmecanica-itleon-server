@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return AcknowledgmentsReceived11.init(sequelize, DataTypes);
+  return ciencias_economicas_5.init(sequelize, DataTypes);
 }
 
-class AcknowledgmentsReceived11 extends Sequelize.Model {
+class ciencias_economicas_5 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -12,26 +12,34 @@ class AcknowledgmentsReceived11 extends Sequelize.Model {
       allowNull: false,
       primaryKey: true
     },
-    document_0_id: {
+    document_2_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'document_0',
+        model: 'document_2',
         key: 'id'
       }
     },
-    description: {
-      type: DataTypes.STRING,
+    hour_theory: {
+      type: DataTypes.SMALLINT,
+      allowNull: true
+    },
+    hour_practice: {
+      type: DataTypes.SMALLINT,
+      allowNull: true
+    },
+    hour_total: {
+      type: DataTypes.SMALLINT,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'acknowledgments_received_11',
+    tableName: 'ciencias_economicas_5',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "acknowledgments_received_11_pkey",
+        name: "ciencias_economicas_5_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -39,6 +47,6 @@ class AcknowledgmentsReceived11 extends Sequelize.Model {
       },
     ]
   });
-  return AcknowledgmentsReceived11;
+  return ciencias_economicas_5;
   }
 }

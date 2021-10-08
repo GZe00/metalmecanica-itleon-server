@@ -1,53 +1,41 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return Document0.init(sequelize, DataTypes);
+  return ciencias_basicas_0.init(sequelize, DataTypes);
 }
 
-class Document0 extends Sequelize.Model {
+class ciencias_basicas_0 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
+      primaryKey: true
+    },
+    document_2_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
       references: {
-        model: 'roles',
+        model: 'document_2',
         key: 'id'
       }
     },
-    teach_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    names: {
+    key: {
       type: DataTypes.STRING,
       allowNull: true
     },
-    lastnames: {
-      type: DataTypes.STRING,
-      allowNull: true
-    },
-    age: {
-      type: DataTypes.INTEGER,
-      allowNull: true
-    },
-    birthday: {
-      type: DataTypes.DATEONLY,
-      allowNull: true
-    },
-    job_as: {
+    description: {
       type: DataTypes.STRING,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'document_0',
+    tableName: 'ciencias_basicas_0',
     schema: 'public',
-    timestamps: true,
+    timestamps: false,
     indexes: [
       {
-        name: "document_0_pkey",
+        name: "ciencias_basicas_0_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -55,6 +43,6 @@ class Document0 extends Sequelize.Model {
       },
     ]
   });
-  return Document0;
+  return ciencias_basicas_0;
   }
 }

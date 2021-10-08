@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return Semester.init(sequelize, DataTypes);
+  return semester.init(sequelize, DataTypes);
 }
 
-class Semester extends Sequelize.Model {
+class semester extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -39,6 +39,6 @@ class Semester extends Sequelize.Model {
       },
     ]
   });
-  return Semester;
+  return semester;
   }
 }

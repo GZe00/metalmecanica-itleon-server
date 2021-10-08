@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return AcademicProductsPe6.init(sequelize, DataTypes);
+  return engineering_designExperience_8.init(sequelize, DataTypes);
 }
 
-class AcademicProductsPe6 extends Sequelize.Model {
+class engineering_designExperience_8 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -20,22 +20,26 @@ class AcademicProductsPe6 extends Sequelize.Model {
         key: 'id'
       }
     },
-    num: {
-      type: DataTypes.INTEGER,
+    organism: {
+      type: DataTypes.STRING,
       allowNull: true
     },
-    description: {
+    period: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    experiencie: {
       type: DataTypes.STRING,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'academic_productsPE_6',
+    tableName: 'engineering_designExperience_8',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "academic_productsPE_6_pkey",
+        name: "engineering_designExperience_8_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -43,6 +47,6 @@ class AcademicProductsPe6 extends Sequelize.Model {
       },
     ]
   });
-  return AcademicProductsPe6;
+  return engineering_designExperience_8;
   }
 }

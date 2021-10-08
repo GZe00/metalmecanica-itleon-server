@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return User.init(sequelize, DataTypes);
+  return users.init(sequelize, DataTypes);
 }
 
-class User extends Sequelize.Model {
+class users extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -23,12 +23,12 @@ class User extends Sequelize.Model {
     controlnumber: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      unique: "user_controlnumber_key"
+      unique: "users_controlnumber_key"
     },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
-      unique: "user_email_key"
+      unique: "users_email_key"
     },
     password: {
       type: DataTypes.STRING,
@@ -46,29 +46,34 @@ class User extends Sequelize.Model {
       type: DataTypes.BOOLEAN,
       allowNull: true,
       defaultValue: false
+    },
+    first_time: {
+      type: DataTypes.BOOLEAN,
+      allowNull: true,
+      defaultValue: false
     }
   }, {
     sequelize,
-    tableName: 'user',
+    tableName: 'users',
     schema: 'public',
     timestamps: true,
     indexes: [
       {
-        name: "user_controlnumber_key",
+        name: "users_controlnumber_key",
         unique: true,
         fields: [
           { name: "controlnumber" },
         ]
       },
       {
-        name: "user_email_key",
+        name: "users_email_key",
         unique: true,
         fields: [
           { name: "email" },
         ]
       },
       {
-        name: "user_pkey",
+        name: "users_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -76,6 +81,6 @@ class User extends Sequelize.Model {
       },
     ]
   });
-  return User;
+  return users;
   }
 }

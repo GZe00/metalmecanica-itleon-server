@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return AcademicManagement5.init(sequelize, DataTypes);
+  return ciencias_ingenieria_2.init(sequelize, DataTypes);
 }
 
-class AcademicManagement5 extends Sequelize.Model {
+class ciencias_ingenieria_2 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -12,38 +12,34 @@ class AcademicManagement5 extends Sequelize.Model {
       allowNull: false,
       primaryKey: true
     },
-    document_0_id: {
+    document_2_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'document_0',
+        model: 'document_2',
         key: 'id'
       }
     },
-    activity: {
-      type: DataTypes.STRING,
+    hour_theory: {
+      type: DataTypes.SMALLINT,
       allowNull: true
     },
-    institution: {
-      type: DataTypes.STRING,
+    hour_practice: {
+      type: DataTypes.SMALLINT,
       allowNull: true
     },
-    from: {
-      type: DataTypes.DATEONLY,
-      allowNull: true
-    },
-    to: {
-      type: DataTypes.DATEONLY,
+    hour_total: {
+      type: DataTypes.SMALLINT,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'academic_management_5',
+    tableName: 'ciencias_ingenieria_2',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "academic_management_5_pkey",
+        name: "ciencias_ingenieria_2_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -51,6 +47,6 @@ class AcademicManagement5 extends Sequelize.Model {
       },
     ]
   });
-  return AcademicManagement5;
+  return ciencias_ingenieria_2;
   }
 }

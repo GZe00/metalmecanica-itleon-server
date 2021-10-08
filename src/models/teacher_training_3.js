@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return CienciasBasicas1.init(sequelize, DataTypes);
+  return teacher_training_3.init(sequelize, DataTypes);
 }
 
-class CienciasBasicas1 extends Sequelize.Model {
+class teacher_training_3 extends Sequelize.Model {
   static init(sequelize, DataTypes) {
   super.init({
     id: {
@@ -12,34 +12,42 @@ class CienciasBasicas1 extends Sequelize.Model {
       allowNull: false,
       primaryKey: true
     },
-    document_2_id: {
+    document_0_id: {
       type: DataTypes.INTEGER,
       allowNull: true,
       references: {
-        model: 'document_2',
+        model: 'document_0',
         key: 'id'
       }
     },
-    hour_theory: {
-      type: DataTypes.SMALLINT,
+    type_training: {
+      type: DataTypes.STRING,
       allowNull: true
     },
-    hour_practice: {
-      type: DataTypes.SMALLINT,
+    institution: {
+      type: DataTypes.STRING,
       allowNull: true
     },
-    hour_total: {
-      type: DataTypes.SMALLINT,
+    country: {
+      type: DataTypes.STRING,
+      allowNull: true
+    },
+    year_given: {
+      type: DataTypes.DATEONLY,
+      allowNull: true
+    },
+    hours: {
+      type: DataTypes.STRING,
       allowNull: true
     }
   }, {
     sequelize,
-    tableName: 'ciencias_basicas_1',
+    tableName: 'teacher_training_3',
     schema: 'public',
     timestamps: false,
     indexes: [
       {
-        name: "ciencias_basicas_1_pkey",
+        name: "teacher_training_3_pkey",
         unique: true,
         fields: [
           { name: "id" },
@@ -47,6 +55,6 @@ class CienciasBasicas1 extends Sequelize.Model {
       },
     ]
   });
-  return CienciasBasicas1;
+  return teacher_training_3;
   }
 }
